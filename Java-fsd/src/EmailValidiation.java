@@ -9,7 +9,7 @@ public class EmailValidiation {
 		//Taking input
 		String emailid=sc.nextLine();
 		//define a pattern like (someone@example.com)
-		String regex="^[a-z A-Z 0-9 +_.-]+@[a-z A-Z]+.[a-z]{2,3}$";
+		String regex="^[a-zA-Z0-9+_.-]+@[a-zA-Z]+.[a-z]{2,3}$";
 		Pattern pattern=Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(emailid);
 		//printing results

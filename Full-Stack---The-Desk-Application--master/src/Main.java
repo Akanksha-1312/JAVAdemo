@@ -90,26 +90,30 @@ public class Main {
         System.out.println("Closing your application... \nThank you!");
             }
     private static void searchExpenses(ArrayList<Integer> arrayList) {
-        int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
         //Complete the method
-        Scanner sc=new Scanner(System.in);
-        int expense=sc.nextInt();       
-        int result=linearSearch(arrayList, expense);
-        System.out.println();
-        if (result!=-1) {
-        	System.out.println("Element found at "+result);
-        }else {System.out.println("Not found ");}
+        
+        int c=0;
+        int l=arrayList.size();
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0;i<l;i++)
+        {
+            if(arrayList.get(i)==n)
+            {
+                System.out.println("Expenditure found");
+                break;
+            }
+            c++;
         }
-    private static int linearSearch(ArrayList <Integer> arri, int key){ 
-    	Integer[] arr=arri.toArray(new Integer[0]);
-        for(int i=0;i<arr.length;i++){    
-            if(arr[i] == key){    
-                return i;    
-            }    
-        }    
-        return -1;    
+        if(c==l)
+        {
+            System.out.println("Expenditure not found");
+        }
+
     }
+
+    
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
         System.out.println("Before Sorted : "+arrayList);
